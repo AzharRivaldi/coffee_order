@@ -30,14 +30,16 @@ class ModelListHome {
   }
 
   static Future<List<ModelListHome>> getListData() async {
-    var apiURL = Uri.parse('https://fake-coffee-api.vercel.app/api');
+    //var apiURL = Uri.parse('https://fake-coffee-api.vercel.app/api'); //API nya error 500
+    var apiURL = Uri.parse('https://tea-api-gules.vercel.app/api'); //sementara pake ini
     final jsonData = await http.get(apiURL);
     List list = jsonDecode(jsonData.body);
     return list.map((e) => ModelListHome.fromJson(e)).toList();
   }
 
   static Future<List<ModelListHome>> getListDataAsc() async {
-    var apiURL = Uri.parse('https://fake-coffee-api.vercel.app/api?sort=asc');
+    //var apiURL = Uri.parse('https://fake-coffee-api.vercel.app/api?sort=asc'); //API nya error 500
+    var apiURL = Uri.parse('https://tea-api-gules.vercel.app/api'); //sementara pake ini
     final jsonData = await http.get(apiURL);
     List list = jsonDecode(jsonData.body);
     return list.map((e) => ModelListHome.fromJson(e)).toList();
